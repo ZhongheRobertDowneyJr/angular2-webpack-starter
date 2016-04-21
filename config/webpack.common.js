@@ -110,7 +110,8 @@ module.exports = {
         exclude: [
           // these packages have problems with their sourcemaps
           helpers.root('node_modules/rxjs'),
-          helpers.root('node_modules/@angular2-material')
+          helpers.root('node_modules/@angular2-material'),
+          helpers.root('node_modules/primeng')
         ]
       }
 
@@ -221,7 +222,18 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: 'src/assets',
       to: 'assets'
-    }]),
+      },{
+            from: 'node_modules/primeui/themes/delta/theme.css',
+            to: 'assets/primeui/themes/delta/theme.css'
+        },
+        {
+          from: 'node_modules/primeui/themes/delta/images/',
+          to: 'assets/primeui/themes/delta/images'
+        },
+        {
+          from: 'node_modules/primeui/primeui-ng-all.min.css',
+          to: 'assets/primeui/primeui-ng-all.min.css'
+        }]),
 
     /*
      * Plugin: HtmlWebpackPlugin

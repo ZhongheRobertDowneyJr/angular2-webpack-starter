@@ -4,14 +4,17 @@
 
     <form (ngSubmit)="submitState(localState.value)" autocomplete="off">
 
-      <md-input
+      <input pInputText
         placeholder="Submit Local State to App State"
         [value]="localState.value"
         (input)="localState.value = $event.target.value"
         autofocus>
-      </md-input>
 
-      <button md-raised-button color="primary">Submit Value</button>
+      <button pButton color="primary" label="Submit"></button>
+      
+      <p-dialog header="PrimeNG" modal="modal" visible="visible">
+          PrimeNG with Angular2-Webpack-Starter
+      </p-dialog>
     </form>
     <!--
       <input type="text" [value]="localState.value" (input)="localState.value = $event.target.value" autofocus>
